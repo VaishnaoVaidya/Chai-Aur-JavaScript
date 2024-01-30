@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body style="background: #000000; color: aliceblue;">
+    <ul class="language">
+        <li>JavaScript</li>
+
+    </ul>
+</body>
+<script>
+    
+
+    function addLanguage(langName){
+       const li = document.createElement("li");
+       li.innerHTML = `${langName}`
+       document.querySelector('.language').appendChild(li);
+    }
+    addLanguage("python")
+    addLanguage("Typescript")
+
+    function addOptiLanguage(langName){                //optimise code
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptiLanguage('Java')
+    addOptiLanguage('golang')
+
+    //edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    // secondLang.innerHTML = "mojo"
+    const newLi = document.createElement("li")
+    newLi.textContent = "mojo"
+    secondLang.replaceWith(newLi)
+
+    //edit
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>Typescript</li>'
+
+    //remove
+    const lastLang = document.querySelector("li:last-child")  
+    lastLang.remove()
+
+    const footer = document.createElement("footer");
+    console.log(footer);
+    footer.id = Math.round(Math.random() * 10 + 1)
+    footer.setAttribute("className", "tittle" )
+    footer.style.background = "blue"
+    footer.style.textAlign = "center"
+    // footer.innerText = "Programming Languages"
+    // const footer = document.createTextNode( "Programming Languages")
+    // footer.appendChild(footer)
+    footer.appendChild(document.createTextNode( "Programming Languages"))
+     
+    document.body.appendChild(footer)
+
+</script>
+</html>
